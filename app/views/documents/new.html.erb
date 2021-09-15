@@ -1,2 +1,27 @@
 <h1>Documents#new</h1>
-<p>Find me in app/views/documents/new.html.erb</p>
+
+<% if !@document.errors.empty? %>   
+   <div>   
+         
+      <ul>   
+         <% @document.errors.full_messages.each do |msg| %>   
+            <li><%= msg %></li>   
+         <% end %>      </ul>   
+         
+   </div>   
+<% end %> 
+
+<div>   
+   <%= form_for(@document)  do |f| %>   
+      <%= f.label :title %>   
+      <%= f.text_field :title %>   
+
+      <%= f.label :description %>   
+      <%= f.text_field :description %>  
+      <br><br>   
+      <%= f.label :attachment %>   
+      <%= f.file_field :attachment %>   
+      <br>   
+      <%= f.submit "Save" %>   
+   <% end %>   
+</div>   

@@ -1,0 +1,7 @@
+<ul>
+  <% @documents.each do |document| %>
+    <h3><%= document.title %></h3>
+    <p><%= document.description %></p>
+    <p><%= image_tag document.attachment_url %></p>
+  <% end %>
+</ul>

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'documents/new'
-  get 'documents/create'
-  get 'documents/destroy'
+  resources :documents, only: [:index, :new, :create, :destroy]
+  root to: "documents#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
