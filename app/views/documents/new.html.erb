@@ -19,7 +19,11 @@
       <%= f.text_field :description %>  
       <br><br>   
       <%= f.label :attachment %>   
-      <%= f.file_field :attachment %>   
+      <%= f.file_field :attachment %> 
+
+      <%= f.label :tags %>   
+      <%#= f.text_field :tag_ids, input_html: {multiple: true} %>
+      <%= f.text_field :all_tags %>
       <br>   
       <%= f.submit "Save" %>   
    <% end %>   

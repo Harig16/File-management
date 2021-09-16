@@ -15,6 +15,7 @@ class DocumentsController < ApplicationController
     #@document = Document.new(document_params)
     if logged_in?
       @document = current_user.documents.create(document_params)
+      #debugger
       if @document.save
         flash[:success] = "Document uploaded successfully!"
         redirect_to documents_path
@@ -37,10 +38,17 @@ class DocumentsController < ApplicationController
     redirect_to root_url
   end
 
+  def tagged
+    if params[:tag]
+      @documents = Document.tagged_with(params[:tag]).where(user_id: current_user.id)
+      #debugger
+    end
+  end
+
   private
 
     def document_params
-      params.require(:document).permit(:title, :description, :attachment) 
+      params.require(:document).permit(:title, :description, :attachment, :all_tags) 
     end
 
     def correct_user

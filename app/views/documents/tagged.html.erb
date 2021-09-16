@@ -1,0 +1,10 @@
+<%#= @documents.tag %>
+
+<% @documents.each do |document| %>
+  <li><%= document.title %></li>
+  <em><%= document.description %></em>
+  <p><%= link_to "Download", document.attachment_url unless document.attachment_url.nil? %> </p>
+  <hr/>
+<% end %>
+
+<%= link_to "Back", root_url %>
