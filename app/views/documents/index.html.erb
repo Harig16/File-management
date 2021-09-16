@@ -1,11 +1,12 @@
+<p><%= current_user.name.capitalize %></p>
 <p>User Logout: <%= link_to "Log out", logout_path, method: "delete" %><p>
 
-<%= link_to "Upload", new_document_path %>
+File Upload: <%= link_to "Upload", new_document_path %>
 <div class="container">
   <ul>
     <% @documents.each do |document| %>
       <h3><%= link_to document.title, document_path(document)  %></h3>
-      <p><%= link_to "Download", document.attachment_url %> | 
+      <p><%= link_to "Download", document.attachment_url unless document.attachment_url.nil? %> 
       <%= link_to "Delete", document, method: :delete, data: { confirm: "You Sure?"} %> </p>
     <% end %>
   </ul>

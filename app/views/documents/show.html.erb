@@ -1,4 +1,4 @@
 <h2><%= @document.title %></h2>
 <em><%= @document.description %></em>
-<p><%= link_to "Download", @document.attachment_url %></p>
+<p><%= link_to "Download", @document.attachment_url unless @document.attachment_url.nil? %></p>
 <%= link_to "Back", root_url %> | <%= link_to "Delete", @document, method: :delete, data: { confirm: "You Sure?"} %>
