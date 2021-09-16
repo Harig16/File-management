@@ -1,7 +1,8 @@
+<%= link_to "Upload", new_document_path %>
 <ul>
   <% @documents.each do |document| %>
     <h3><%= document.title %></h3>
     <p><%= document.description %></p>
-    <p><%= image_tag document.attachment_url %></p>
+    <p><%= link_to "Download", document.attachment_url %></p>
   <% end %>
 </ul>

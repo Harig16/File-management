@@ -196,6 +196,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   carrierwave (~> 2.0)
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
