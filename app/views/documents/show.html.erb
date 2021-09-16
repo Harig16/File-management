@@ -1,0 +1,4 @@
+<h2><%= @document.title %></h2>
+<em><%= @document.description %></em>
+<p><%= link_to "Download", @document.attachment_url %></p>
+<%= link_to "Back", root_url %> | <%= link_to "Delete", @document, method: :delete, data: { confirm: "You Sure?"} %>
