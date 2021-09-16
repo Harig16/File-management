@@ -1,14 +1,13 @@
 <h1>Documents#new</h1>
 
 <% if !@document.errors.empty? %>   
-   <div>   
-         
-      <ul>   
-         <% @document.errors.full_messages.each do |msg| %>   
-            <li><%= msg %></li>   
-         <% end %>      </ul>   
-         
-   </div>   
+  <div>   
+    <ul>   
+      <% @document.errors.full_messages.each do |msg| %>   
+        <li><%= msg %></li>   
+      <% end %>      
+    </ul>   
+  </div>   
 <% end %> 
 
 <div>   

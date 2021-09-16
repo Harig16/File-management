@@ -1,5 +1,15 @@
 <h1>Sign Up</h1>
 
+<% if !@user.errors.empty? %>   
+  <div>   
+    <ul>   
+      <% @user.errors.full_messages.each do |msg| %>   
+        <li><%= msg %></li>   
+      <% end %>      
+    </ul>   
+  </div>   
+<% end %> 
+
 <%= form_with(model: @user, local: true) do |f| %>
 
   <%= f.label :name %>
