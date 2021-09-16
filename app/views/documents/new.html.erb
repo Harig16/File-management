@@ -1,4 +1,4 @@
-<h1>Documents#new</h1>
+<h1>Documents</h1>
 
 <% if !@document.errors.empty? %>   
   <div>   
@@ -12,19 +12,20 @@
 
 <div>   
    <%= form_for(@document)  do |f| %>   
-      <%= f.label :title %>   
-      <%= f.text_field :title %>   
+      <p><%= f.label :title %>   
+      <%= f.text_field :title %> </p>  
 
-      <%= f.label :description %>   
-      <%= f.text_field :description %>  
-      <br><br>   
-      <%= f.label :attachment %>   
-      <%= f.file_field :attachment %> 
+      <p><%= f.label :description %>   
+      <%= f.text_field :description %> </p>
 
-      <%= f.label :tags %>   
+      <p><%= f.label :attachment %>   
+      <%= f.file_field :attachment %></p>
+
+      <p><%= f.label :tags %>   
       <%#= f.text_field :tag_ids, input_html: {multiple: true} %>
-      <%= f.text_field :all_tags %>
-      <br>   
+      <%= f.text_field :all_tags %></p>
+         
       <%= f.submit "Save" %>   
    <% end %>   
+   <p><%= link_to "back", root_url %></p>
 </div>   
