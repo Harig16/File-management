@@ -14,7 +14,7 @@ File Upload: <%= link_to "Upload", new_document_path %>
       <% tag_links(document.all_tags).split(",").each do |tag| %>
         <%= link_to tag, tag_path(tag) %><p>
       <% end %>
-      <p>Download the attachment: <%= link_to "Download", document.attachment_url unless document.attachment_url.nil? %> 
+      <p><%= link_to "Download File", document.attachment_url unless document.attachment_url.nil? %> 
       <%= link_to "Delete", document, method: :delete, data: { confirm: "You Sure?"} %> </p>
       <hr/>
     <% end %>
